@@ -5,12 +5,9 @@ CREATE DATABASE burgers_db;
 USE burgers_db;
 
 CREATE TABLE burgers(
-    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	burger_name VARCHAR(55) NOT NULL,
-    devoured BOOLEAN DEFAULT false
+   id int NOT NULL AUTO_INCREMENT,
+  `burger_name` varchar(255) NOT NULL,
+  devoured BOOLEAN NOT NULL,
+  date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
 );
-
-INSERT INTO burgers (burger_name, devoured)
-VALUES ("Cheeseburger", false);
-
-SELECT * FROM burgers;
