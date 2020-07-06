@@ -22,7 +22,7 @@
         <p class="title">Devour a Burger!</p>
 
         <ul>
-          {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=false}} {{/if}} {{/each}}
+          {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devoured=true}} {{/unless}} {{/each}}
         </ul>
       </div>
     </div>
@@ -31,11 +31,11 @@
         <p class="title">Devoured Burgers!</p>
         <div class="menu">
           <ul>
-            {{#each burgers}} {{#unless devoured}}
+            {{#each burgers}} {{#if devoured}}
             <li>
               {{id}}. {{burger_name}}
             </li>
-            {{/unless}} {{/each}}
+            {{/if}} {{/each}}
           </ul>
         </div>
 
@@ -50,7 +50,7 @@
 
           <div class="field">
             <label class="label" for="burger">Burger Name:</label>
-            <input type="text" id="burger" name="name" class="input" required>
+            <input type="text" id="burgername" name="name" class="input" required>
           </div>
 
           <button class="button is-danger" type="submit ">Add Burger</button>
